@@ -3,10 +3,10 @@ var open = require('open');
 var rp = require('request-promise');
 var helper = require('./helper.js');
 
-var testScripts = require('./test-script.json');
-
 // Config settings
 var directLineSecret = process.env.DIRECT_LINE_SECRET;
+var botTestsFile = process.env.BOT_TESTS_FILE;
+var testScripts = require(botTestsFile);
 
 if (directLineSecret == undefined) {
     console.log("Please set the DIRECT_LINE_SECRET env var")
