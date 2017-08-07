@@ -1,0 +1,19 @@
+{
+  "name": "weather-bot-tester",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jacob Tomlinson <jacob@jacobtomlinson.co.uk> (http://www.informaticslab.co.uk/)",
+  "license": "ISC",
+  "dependencies": {
+    "open": "0.0.5",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1",
+    "swagger-client": "^2.1.18",
+    "websocket": "^1.0.24"
+  }
+}
