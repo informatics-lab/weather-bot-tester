@@ -7,6 +7,12 @@ var testScripts = require('./test-script.json');
 
 // Config settings
 var directLineSecret = process.env.DIRECT_LINE_SECRET;
+
+if (directLineSecret == undefined) {
+    console.log("Please set the DIRECT_LINE_SECRET env var")
+    process.exit()
+}
+
 var directLineUserId = 'load-tester-' + helper.randomString(8);
 console.log("Running as user " + directLineUserId);
 
