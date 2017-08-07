@@ -1,3 +1,4 @@
-secrets.json
+*secrets.json
+*secrets.yaml
 node_modules
 .node-version

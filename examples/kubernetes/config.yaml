@@ -1,0 +1,11 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: weather-bot-tester
+  namespace: weather-bot-tester
+data:
+  tests.json: |-
+    [
+      ["Hi", "Bob", "What's the wether in exeter?"],
+      ["Hey", "Jim", "Is it raining in London?"]
+    ]

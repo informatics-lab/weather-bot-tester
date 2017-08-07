@@ -1,6 +1,8 @@
 Weather Bot Tester
 ==================
 
+A tool for testing [Bot Framework](https://dev.botframework.com/) bots using [Direct Line](https://docs.microsoft.com/en-us/bot-framework/rest-api/bot-framework-rest-direct-line-3-0-concepts).
+
 ```shell
 cat <<'EOF' >>/tmp/bot-tests.json
 [
