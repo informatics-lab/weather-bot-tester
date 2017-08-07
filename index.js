@@ -3,19 +3,10 @@ var open = require('open');
 var rp = require('request-promise');
 var helper = require('./helper.js');
 
-var secrets = require('./secrets.json');
 var testScripts = require('./test-script.json');
 
-
-
 // Config settings
-var directLineSecret = secrets["directLineSecret"];
-
-// directLineUserId is the field that identifies which user is sending activities to the Direct Line service.
-// Because this value is created and sent within your Direct Line client, your bot should not
-// trust the value for any security-sensitive operations. Instead, have the user log in and
-// store any sign-in tokens against the Conversation or Private state fields. Those fields
-// are secured by the conversation ID, which is protected with a signature.
+var directLineSecret = process.env.DIRECT_LINE_SECRET;
 var directLineUserId = 'load-tester-' + helper.randomString(8);
 console.log("Running as user " + directLineUserId);
 
@@ -69,7 +60,7 @@ directLineClient.then(function (client) {
                 // Start receiving messages from WS stream - using Node client
                 startReceivingWebSocketClient(responseObj.streamUrl, responseObj.conversationId);
             }
-            
+
             script = testScripts[Math.floor(Math.random()*testScripts.length)];
             runTests(client, responseObj.conversationId, directLineUserId, script);
         });
