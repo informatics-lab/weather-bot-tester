@@ -1,19 +1,21 @@
 # Deployment
-apiVersion: extensions/v1beta1
-kind: Deployment
+apiVersion: batch/v1
+kind: Job
 metadata:
   name: weather-bot-tester
   namespace: weather-bot-tester
 spec:
-  replicas: 1
+  parallelism: 50
+  completions: 1000
   template:
     metadata:
       labels:
         app: weather-bot-tester
     spec:
+      restartPolicy: OnFailure
       containers:
         - image: informaticslab/weather-bot-tester:latest
-          imagePullPolicy: ifMissing
+          imagePullPolicy: IfNotPresent
           name: weather-bot-tester
           env:
             - name: DIRECT_LINE_SECRET
@@ -27,3 +29,10 @@ spec:
             requests:
               cpu: 10m
               memory: 30Mi
+          volumeMounts:
+            - mountPath: "/tmp/bot-tests"
+              name: bot-tests
+      volumes:
+        - name: bot-tests
+          configMap:
+            name: weather-bot-tester

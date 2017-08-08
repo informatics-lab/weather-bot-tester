@@ -195,29 +195,13 @@ function printMessage(activity) {
         activity.attachments.forEach(function (attachment) {
             switch (attachment.contentType) {
                 case "application/vnd.microsoft.card.hero":
-                    renderHeroCard(attachment);
+                    console.log("Hero card - " + attachment.content.title);
                     break;
 
                 case "image/png":
                     console.log('Opening the requested image ' + attachment.contentUrl);
-                    open(attachment.contentUrl);
                     break;
             }
         });
     }
-}
-
-function renderHeroCard(attachment) {
-    var width = 70;
-    var contentLine = function (content) {
-        return ' '.repeat((width - content.length) / 2) +
-            content +
-            ' '.repeat((width - content.length) / 2);
-    }
-
-    console.log('/' + '*'.repeat(width + 1));
-    console.log('*' + contentLine(attachment.content.title) + '*');
-    console.log('*' + ' '.repeat(width) + '*');
-    console.log('*' + contentLine(attachment.content.text) + '*');
-    console.log('*'.repeat(width + 1) + '/');
 }

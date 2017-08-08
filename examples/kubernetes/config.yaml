@@ -6,6 +6,12 @@ metadata:
 data:
   tests.json: |-
     [
-      ["Hi", "Bob", "What's the wether in exeter?"],
-      ["Hey", "Jim", "Is it raining in London?"]
+      ["Hey", "When will it stop raining?", "Will it rain?", "When will it stop?"],
+      ["Hey", "Will it rain at lunchtime?", "Will it rain today?"],
+      ["Hello", "have you ever been to poland?"],
+      ["Hello", "What's the weather like today in Warminster?", "Will I need a coat?"],
+      ["Hello", "What's the weather like?", "Exeter", ""],
+      ["Hello", "What's the weather like in Salisbury?", "Will I need a jumper?", "Thanks"],
+      ["Hi.", "Thanks.", "What's the weather in bradford on avon?", "Will it snow tomorrow?", "When's the next heatwave?", "Is it raining in Exeter?", "What's the weather in Dawlish?", "What's the weather in Swindon?"],
+      ["Hi.", "Is it sunny today in Dawlish?", "And for sunday?"]
     ]
