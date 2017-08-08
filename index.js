@@ -76,7 +76,7 @@ function runTests(client, conversationId, userId, script) {
     console.log("Starting tests");
     i = 0;
     setInterval(() => {
-      console.log(script[i]);
+      console.log("Send - " + script[i]);
       sendMessage(client, conversationId, userId, script[i]);
       i++;
       if (i >= script.length) {
@@ -188,7 +188,7 @@ function printMessages(activities) {
 
 function printMessage(activity) {
     if (activity.text) {
-        console.log(activity.text);
+        console.log("Receive - " + activity.text);
     }
 
     if (activity.attachments) {
@@ -199,7 +199,7 @@ function printMessage(activity) {
                     break;
 
                 case "image/png":
-                    console.log('Opening the requested image ' + attachment.contentUrl);
+                    console.log('Image - ' + attachment.contentUrl);
                     break;
             }
         });

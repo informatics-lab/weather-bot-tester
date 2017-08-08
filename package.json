@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "push": "git push && git push --tags",
+    "runten": "for i in {1..10}; do node index.js done"
   },
   "author": "Jacob Tomlinson <jacob.tomlinson@informaticslab.co.uk> (http://www.informaticslab.co.uk/)",
   "license": "GPLv3",

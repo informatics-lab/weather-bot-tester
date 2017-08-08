@@ -5,8 +5,8 @@ metadata:
   name: weather-bot-tester
   namespace: weather-bot-tester
 spec:
-  parallelism: 50
-  completions: 1000
+  parallelism: 100
+  completions: 100
   template:
     metadata:
       labels:
@@ -14,7 +14,7 @@ spec:
     spec:
       restartPolicy: OnFailure
       containers:
-        - image: informaticslab/weather-bot-tester:latest
+        - image: informaticslab/weather-bot-tester:v0.3.0
           imagePullPolicy: IfNotPresent
           name: weather-bot-tester
           env:
